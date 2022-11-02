@@ -16,12 +16,37 @@ type Chiper interface {
 func (s *student) Encode() string {
 	var nameEncode = ""
 	// your code here
+	for _, v := range s.name {
+		if v >= 97 && v <= 122 {
+			v = v + 3
+
+			if v > 122 {
+				v = v - 26
+			}
+		}
+		nameEncode += string(v)
+
+	}
+
 	return nameEncode
+	//ketika membaca perkarakter string maka yang dihasilkan adalah nilai ASCII nya.
 }
 
 func (s *student) Decode() string {
 	var nameDecode = ""
 	// your code here
+	for _, v := range s.nameEncode {
+		if v >= 97 && v <= 122 { //mengecek satu2 huruf pada string
+			v = v - 3
+
+			if v < 97 {
+				v = v + 26 // ketika kurang dari 97
+			}
+		}
+		nameDecode += string(v) // "a"+"b"="ab"
+
+	}
+
 	return nameDecode
 }
 
@@ -42,4 +67,5 @@ func main() {
 	} else {
 		fmt.Println("Wrong input name menu")
 	}
+
 }

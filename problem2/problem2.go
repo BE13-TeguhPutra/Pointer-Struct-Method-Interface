@@ -17,6 +17,7 @@ func GetMinMax(numbers ...*int) (min int, max int) {
 		}
 
 	}
+
 	return min, max
 
 }
@@ -32,5 +33,7 @@ func main() {
 	min, max = GetMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
 	fmt.Println("Nilai min ", min)
 	fmt.Println("Nilai max ", max)
+
+	fmt.Println("a " + "b")
 
 }

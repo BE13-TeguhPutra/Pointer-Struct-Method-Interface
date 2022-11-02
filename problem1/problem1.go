@@ -4,16 +4,18 @@ import "fmt"
 
 func Swap(a, b *int) (int, int) {
 	//your code here
-	var c int = *b
+	var c int
 
-	var x *int = a
-	var y *int = b
+	c = *a
+	*a = *b
+	*b = c
 
-	*y = *x
-	*x = c
-	fmt.Println(c)
+	return *a, *b
 
-	return *x, *y
+	// return *x, *y
+
+	// *a,*b=*b,*a
+	// return *a,*b
 
 }
 
